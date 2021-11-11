@@ -1,11 +1,18 @@
 package org.ianlai.leetcodejava.official.range100;
 
-public class LC_Official_0001_sumOfTwo {
+import java.util.HashMap;
+
+public class LC_official_0001_sumOfTwo {
     public static void main(String[] args) {
 
     }
 
-    public static int[] twoSum(int[] nums, int target) {
+    /**
+    * twoSumSolution1 使用快排和头尾双指针向中间逼近的方法，时间复杂度为O(nlogn)+2O(n),空间复杂度为O(n),开销为快排后的有序数组存储
+    * @author IanLai
+    * @date 2021-11-11 17:27:40
+    */
+    public static int[] twoSumSolution1(int[] nums, int target) {
 
         int flag_start = 0;
         int flag_end = nums.length - 1;
@@ -63,6 +70,24 @@ public class LC_Official_0001_sumOfTwo {
                 break;
         }
         return result;
+    }
+
+
+    /**
+     * twoSumSolution2 HashMap处理，时间复杂度为O(n),空间复杂度为O(n),开销为HashMap的开销
+     * @author IanLai
+     * @date 2021-11-11 17:27:40
+     */
+    public static int[] twoSumSolution2(int[] nums, int target) {
+
+        HashMap<Integer,Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < nums.length; i++){
+            if(hashMap.containsKey(target - nums[i])){
+               return new int[]{i, hashMap.get(target - nums[i])};
+            }
+            hashMap.put(nums[i],i);
+        }
+        return new int[0];
     }
 }
 
