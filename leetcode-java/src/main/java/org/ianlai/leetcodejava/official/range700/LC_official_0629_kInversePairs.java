@@ -50,4 +50,20 @@ public class LC_official_0629_kInversePairs {
         array[n][k] = total;
         return total;
     }
+
+    /*
+     * 状态转移方程：f[i][j] = f[i-1][j] + f[i-1][j-1] + ... + f[i-1][j-(i-2)] + f[i-1][j-(i-1)]
+     *                     = zigma{from k = 0 to k = i - 1}f[i-1][j-k]
+     *
+     * with f[i][j] = f[i-1][j] + f[i-1][j-1] + ... + f[i-1][j-(i-2)] + f[i-1][j-(i-1)] as A
+     * and f[i][j-1] = f[i-1][j-1] + f[i-1][j-1] + ... + f[i-1][j-(i-1)] + f[i-1][j-i] as B
+     * A - B then we got f[i][j] = f[i][j-1] + f[i-1][j] - f[i-1][j-i]
+     *
+     * we could see that it cost O(1) to find a f[i][j] with the pre-knowledge of f[i][j-1], f[i-1][j], f[i-1][j-i]
+     * and there is f[x][y] (x:0->n,y:0->k) to find out
+     * so that time cost is O(nk)
+     */
+
+
+
 }
