@@ -6,7 +6,8 @@ public class LC_official_1446_consecutive_characters {
     }
 
     /*
-     * 上届爆了估计，所以答案不对，寄了
+     * 执行用时：1 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：37 MB, 在所有 Java 提交中击败了74.67%的用户
      */
     public static int maxPower(String s) {
         int substringLength = 1;
