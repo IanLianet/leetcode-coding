@@ -1,10 +1,15 @@
 package org.ianlai.leetcodejava.official.range100;
 
+import java.security.NoSuchAlgorithmException;
+import java.time.LocalDateTime;
+import java.util.Random;
+
 public class LC_official_0004_median_of_two_sorted_arrays {
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         int[] nums1 = {1,3};
         int[] nums2 = {2};
         System.out.println(findMedianSortedArrays(nums1,nums2));
+        System.out.println();
     }
 
     /**
@@ -50,7 +55,6 @@ public class LC_official_0004_median_of_two_sorted_arrays {
         }
         return Math.min(nums1[index1],nums2[index2]);
     }
-
 
 
 
