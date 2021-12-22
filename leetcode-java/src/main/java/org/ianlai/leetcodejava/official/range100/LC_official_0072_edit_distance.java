@@ -35,7 +35,7 @@ public class LC_official_0072_edit_distance {
         return levenshteinDistance[m][n];
     }
 
-    public int minDistance2(String word1, String word2) {
+    public int maxMatchSubsequenceLength(String word1, String word2) {
 
         int m = word1.length();
         int n = word2.length();
@@ -55,7 +55,7 @@ public class LC_official_0072_edit_distance {
             }
         }
 
-        return Math.max(m - array[m][n], n - array[m][n]);
+        return array[m][n];
     }
 }
 
