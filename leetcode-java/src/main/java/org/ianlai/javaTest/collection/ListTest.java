@@ -1,10 +1,7 @@
 package org.ianlai.javaTest.collection;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * 关于List的小实验
@@ -19,11 +16,20 @@ public class ListTest {
 
         List<String> stringArrayList = new ArrayList<>(Arrays.asList("123","123","123","456"));
         Iterator<String> iterator = stringArrayList.iterator();
+        ListIterator<String> stringListIterator = stringArrayList.listIterator();
         while (iterator.hasNext()){
             String next = iterator.next();
             System.out.println(next);
             stringArrayList.remove(next);
-            iterator.remove();
+            /*
+            Exception in thread "main" java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:909)
+	at java.util.ArrayList$Itr.remove(ArrayList.java:873)
+
+             这里会报错，因为这个iterator是ArrayList内部实现类Itr，里面的remove方法会调用checkForComodification()，
+             判断是否有被修改
+            */
+            // iterator.remove();
         }
 
 
