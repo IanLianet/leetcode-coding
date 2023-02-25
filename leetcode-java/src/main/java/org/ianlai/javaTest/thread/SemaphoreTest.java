@@ -1,6 +1,5 @@
 package org.ianlai.javaTest.thread;
 
-import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
 
