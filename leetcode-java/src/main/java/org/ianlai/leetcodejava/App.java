@@ -1,7 +1,8 @@
 package org.ianlai.leetcodejava;
 
 /**
- * Hello world!
+ * LeetCode - java 学习项目
+ * @author ianlianetlai
  *
  */
 public class App 
