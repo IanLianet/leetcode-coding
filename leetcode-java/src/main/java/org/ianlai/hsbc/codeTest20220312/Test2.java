@@ -1,7 +1,6 @@
 package org.ianlai.hsbc.codeTest20220312;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,7 +11,7 @@ import java.util.Scanner;
  * @author IanLai
  * @date 2022-03-12 17:27:40
  */
-public class test2 {
+public class Test2 {
 
     private static int count = 0;
     private static boolean flag = false;

@@ -1,10 +1,40 @@
 package org.ianlai.leetcodejava.official.range100;
 
+import org.ianlai.leetcodejava.CryptUtils;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.HashMap;
 
 public class LC_official_0001_sumOfTwo {
-    public static void main(String[] args) {
 
+
+    
+    public static void main(String[] args) throws NoSuchPaddingException, IOException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+        String publicKey =  "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCKMp1pYx9S+3fskzD1nthmUT66sP4g8O++fSfQJJrjqx4BGYyKWAasx/D9MVRmg2bJZy8TWLNimqHK1VxJNyv6uQpUuOeDxOvvaAZYBbbs3bOuVMRI/4WF1zzVaXilN8e06duhRXt2jUd25Gjemw/dAO4ch5LT96cIvVg60DUSnQIDAQAB";
+        String privateKey = "MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAIoynWljH1L7d+yTMPWe2GZRPrqw" +
+                "/iDw7759J9AkmuOrHgEZjIpYBqzH8P0xVGaDZslnLxNYs2KaocrVXEk3K/q5ClS454PE6+9oBlgFtuzds65UxEj/hYXXPNVpeKU3x7Tp26FFe3aNR3bkaN6bD90A7hyHktP3pwi9WDrQNRKdAgMBAAECg" +
+                "YB7y5lstWly+WbVGolqDVAGX9MUg8YyFgJ9HjoS3yeMuFWZYJyftPjNwBGljZHwftcNpYvrBbMzq" +
+                "hcyzmvr/is7CVthxPVkgI4mWv81iZ9IDqJJbHpm3lJgI4Sv/ioFscwVUu7VrNqgQTwOCdLHZfwX" +
+                "xRG055ZfjT28iv6LzWq3dQJBANxk3vD82KsBXEAJHEgxhWKLk26LvyENRXkgkhsfPMWnE8XcXZs2" +
+                "JMX2POncbZRKd+pcpUaWV+tZpOUVhuut5SMCQQCghj3hYu7JjAGMq2UaCYY03bQf2y4dGbuLBFsM" +
+                "5WBabsajPoV9hUWoGAFHIYSHO7wlyOcaWqo/EDB8gOzwUAU/AkAxiDYWwSzM2gRqm+GQVBjfOfFL" +
+                "kfrFqd7oRyqvD8kvvsoR2OHsxTFkkF/GS3URM99Ze7Lld1qRGVeW6Mym4TEzAkA+7eF8ZihuYrCI" +
+                "0PhFiM5QE0n14xrk1Z2sFf0LxTBMw3ijrnLujjyMdTyrAfzOdyB/P485yalMJ7CaXoCEhRpJAkAL" +
+                "gy/kt94CPjj5EU392L05mOCD3LCqIHAZJ84Jy7vh4E3IeAbYHvPro5HBNnAFdFih0YJV/v6X3sw3+6KhNebR";
+        Cipher backDecryptCipher = CryptUtils.newRsaDecrypt(privateKey);
+        Cipher backEncryptCipher = CryptUtils.newRsaEncrypt(publicKey);
+        System.out.println("*****************");
+        String rsaEncryptBase64Encoded = CryptUtils.rsaEncrypt(backEncryptCipher, "123456");
+        System.out.println(rsaEncryptBase64Encoded);
+        String decrypted = CryptUtils.rsaDecrypt(backDecryptCipher, rsaEncryptBase64Encoded);
+        System.out.println(decrypted);
     }
 
     /**
