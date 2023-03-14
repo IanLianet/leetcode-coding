@@ -1,4 +1,4 @@
-package org.ianlai.javaTest.collection;
+package org.ianlai.example.collection;
 
 
 import java.util.*;
@@ -8,7 +8,7 @@ import java.util.*;
  *
  * @author ianlianetlai
  */
-public class StackTest {
+public class StackExample {
     public static void main(String[] args) {
         Stack<String> stack = new Stack();
 

@@ -1,4 +1,4 @@
-package org.ianlai.javaTest.collection;
+package org.ianlai.example.collection;
 
 
 import java.util.*;
@@ -8,7 +8,7 @@ import java.util.*;
  *
  * @author ianlianetlai
  */
-public class ListTest {
+public class ListExample {
     public static void main(String[] args) {
         // Arrays.asList()中，返回的new ArrayList是Arrays中的内部类，没有实现List.add()方法，而不是java.util.ArrayList。
         List<String> stringList = Arrays.asList("123","456");

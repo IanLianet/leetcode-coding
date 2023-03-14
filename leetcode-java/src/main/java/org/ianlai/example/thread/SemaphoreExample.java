@@ -1,4 +1,4 @@
-package org.ianlai.javaTest.thread;
+package org.ianlai.example.thread;
 
 import java.util.Random;
 import java.util.concurrent.Semaphore;
@@ -6,7 +6,7 @@ import java.util.concurrent.Semaphore;
 /**
  * @author ianlianetlai
  */
-public class SemaphoreTest {
+public class SemaphoreExample {
     // 停车场同时容纳的车辆10
     private static Semaphore semaphore = new Semaphore(10);
 

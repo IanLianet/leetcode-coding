@@ -1,14 +1,11 @@
-package org.ianlai.javaTest.collection;
+package org.ianlai.example.collection;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author ianlianetlai
  */
-public class CollectionTest {
+public class CollectionExample {
 
     public static void main(String[] args) {
 
@@ -18,6 +15,7 @@ public class CollectionTest {
         System.out.println(list);
 
         HashSet<Integer> hashSet = new HashSet<>();
+        LinkedHashMap<String,String> linkedHashMap = new LinkedHashMap<>();
 
         Iterator<String> iterator = list.iterator();
     }

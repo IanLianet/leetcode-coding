@@ -1,16 +1,16 @@
-package org.ianlai.javaTest.thread;
+package org.ianlai.example.thread;
 
 
 import java.text.SimpleDateFormat;
 import java.util.Random;
 
-public class ThreadLocalTest implements Runnable {
+public class ThreadLocalExample implements Runnable {
 
     // SimpleDateFormat 不是线程安全的，所以每个线程都要有自己独立的副本
     private static final ThreadLocal<SimpleDateFormat> formatter = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyyMMdd HHmm"));
 
     public static void main(String[] args) throws InterruptedException {
-        ThreadLocalTest obj = new ThreadLocalTest();
+        ThreadLocalExample obj = new ThreadLocalExample();
         for (int i = 0; i < 10; i++) {
             Thread t = new Thread(obj, "" + i);
             Thread.sleep(new Random().nextInt(1000));
