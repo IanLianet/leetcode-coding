@@ -1,6 +1,7 @@
 package org.ianlai.example.collection;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author ianlianetlai
@@ -16,6 +17,8 @@ public class CollectionExample {
 
         HashSet<Integer> hashSet = new HashSet<>();
         LinkedHashMap<String,String> linkedHashMap = new LinkedHashMap<>();
+
+        ConcurrentHashMap<String,String> concurrentHashMap = new ConcurrentHashMap<>();
 
         Iterator<String> iterator = list.iterator();
     }
